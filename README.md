@@ -56,22 +56,6 @@ The primary entry point into the application is app.js.  This file bootstraps th
 - The view listeing to change event will update the state with current values from store 
 
 
-### A Single Dispatcher
-
-
-
-### Stores
-
-
-### Views and Controller-Views
-
-
-
-### Actions and Action Creators
-
-
-### What About that Dispatcher?
-
 
 ## CatClicker Project Breakdown
 
