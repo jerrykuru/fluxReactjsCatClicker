@@ -27,8 +27,33 @@ This is what a running Flux CatClicker example looks like:
 </CatClickerApp> 
 ```
 
-## Structure and Data Flow
+##  Data Flow
 
+### Intial Load of Data from Server 
+
+The primary entry point into the application is app.js.  This file bootstraps the React rendering inside of index.html.  CatClickerApp.react.js is our controller-view and it passes all data down into its child React components.
+
+- In CatClickerApp CatWebAPIUtils.getAllMessages() is called to load data from server.  
+
+- CatWebAPIUtils.getAllMessages() , on sucessfull load of data from server the CatServerActionCreators.receiveAll(catData) is called to create Actions, these actions will be dispacted to APPDispacther
+
+- The App Dispacther will invoke the registerd store callback , in this case CatStore with Action type of ActionTypes.RECEIVE_RAW_MESSAGES
+
+- The Action of type ActionTypes.RECEIVE_RAW_MESSAGES will update the array in stroe _cats with data from server 
+
+- Post update of array _cats , an emit event "change" will be triggred. 
+
+- The view listeing to change event will update the state with current values from store 
+
+### On Click of any Names 
+
+- The onClick will trigger handleClick function in the component CatSelector, which will create a action ActionTypes.CAT_DETAIL
+ 
+- The App Dispacther will invoke the registerd store callback , in this case CatStore with Action type of ActionTypes.CAT_DETAIL
+
+- The numberOfClicks will be updated for the Cat object in _cats array and also update the _currentCatIndex
+ 
+- The view listeing to change event will update the state with current values from store 
 
 
 ### A Single Dispatcher
