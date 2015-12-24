@@ -26,7 +26,7 @@
     "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
-  "author": "Bill Fisher",
+  "author": "Jerry Kuru",
   "browserify": {
     "transform": [
       "reactify",
