@@ -1,7 +1,8 @@
 # Flux CatClicker Example
 
 > An application architecture for React utilizing a unidirectional data flow.
-
+This is what a running Flux TodoMVC example looks like:
+<img src="CatClicker.png" style="width: 100%;" />
 
 ## How to Install  App
   
